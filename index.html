@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SMP: Reusable Score-Matching Motion Priors for Physics-Based Character Control. A pretrained motion diffusion model serves as a reusable, modular reward model for training physically-simulated character control policies across diverse styles, tasks, and interactions.">
+  <meta name="author" content="Yuxuan Mu, Ziyu Zhang, Yi Shi, and collaborators">
+  <meta property="og:title" content="SMP: Reusable Score-Matching Motion Priors">
+  <meta property="og:description" content="SMP builds reusable and modular reward models for training motor controllers across styles, tasks, and interactions.">
+  <meta property="og:type" content="website">
+  <title>SMP &middot; Reusable Score-Matching Motion Priors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+  <!-- =================== HERO =================== -->
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="./assets/videos/SMP_teaser_loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <p class="eyebrow">ACM Transactions on Graphics &middot; SIGGRAPH 2026</p>
+      <h1 class="title">SMP</h1>
+      <p class="subtitle">Reusable Score-Matching Motion Priors<br>for Physics-Based Character Control</p>
+      <p class="tagline">Pretrained motion diffusion models &mdash; repurposed as reward models &mdash; to train policies for <strong>100+ styles</strong>, <strong>diverse tasks</strong>, <strong>object interactions</strong>, and <strong>real-world robots</strong>.</p>
+    </div>
+    <a class="hero-scroll" href="#authors" aria-label="Scroll to authors">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- =================== AUTHORS & LINKS =================== -->
+    <section class="section section--meta" id="authors">
+      <ol class="authors">
+        <li><a class="name" href="http://yxmu.foo/" target="_blank" rel="noopener noreferrer">Yuxuan Mu</a><sup>1*</sup></li>
+        <li><a class="name" href="https://ziyu-charlotte-zhang.github.io/" target="_blank" rel="noopener noreferrer">Ziyu Zhang</a><sup>1*</sup></li>
+        <li><a class="name" href="https://yi-shi94.github.io/" target="_blank" rel="noopener noreferrer">Yi Shi</a><sup>1*</sup></li>
+        <li><a class="name" href="https://sites.google.com/view/dunyang" target="_blank" rel="noopener noreferrer">Dun Yang</a><sup>2</sup></li>
+        <li><span class="name">Minami Matsumoto</span><sup>2</sup></li>
+        <li><span class="name">Kotaro Imamura</span><sup>2</sup></li>
+        <li><a class="name" href="https://guytevet.github.io/" target="_blank" rel="noopener noreferrer">Guy Tevet</a><sup>3</sup></li>
+        <li><a class="name" href="https://ericguo5513.github.io/" target="_blank" rel="noopener noreferrer">Chuan Guo</a><sup>4</sup></li>
+        <li><span class="name">Michael Taylor</span><sup>2</sup></li>
+        <li><a class="name" href="http://www.scs.carleton.ca/~c_shu/" target="_blank" rel="noopener noreferrer">Chang Shu</a><sup>5</sup></li>
+        <li><a class="name" href="https://pengchengxi.github.io/" target="_blank" rel="noopener noreferrer">Pengcheng Xi</a><sup>5</sup></li>
+        <li><a class="name" href="https://xbpeng.github.io/" target="_blank" rel="noopener noreferrer">Xue Bin Peng</a><sup>1,6</sup></li>
+      </ol>
+      <ul class="affiliations">
+        <li><sup>1</sup>Simon Fraser University</li>
+        <li><sup>2</sup>Sony Interactive Entertainment</li>
+        <li><sup>3</sup>Stanford University</li>
+        <li><sup>4</sup>Snap Inc.</li>
+        <li><sup>5</sup>National Research Council Canada</li>
+        <li><sup>6</sup>NVIDIA</li>
+      </ul>
+      <p class="joint-note"><sup>*</sup>Joint first authors</p>
+
+      <nav class="links">
+        <a class="btn btn--primary" href="./assets/paper/SMP_arxiv_0421.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          </span>
+          Paper
+        </a>
+        <a class="btn" href="https://arxiv.org/abs/2512.03028" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l4 8-4 8H4l4-8z"/><path d="M20 4l-6 16"/></svg>
+          </span>
+          arXiv
+        </a>
+        <a class="btn" href="#full-video">
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/></svg>
+          </span>
+          Video
+        </a>
+        <a class="btn" href="https://github.com/xbpeng/MimicKit" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.74 1.27 3.41.97.1-.76.41-1.28.74-1.58-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.3-.52-1.48.11-3.08 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.6.23 2.78.11 3.08.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.41-5.27 5.69.42.37.8 1.1.8 2.22v3.29c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </span>
+          Code
+        </a>
+        <a class="btn" href="./assets/paper/SMP2026_bibtex.txt" target="_blank" rel="noopener noreferrer">
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </span>
+          BibTeX
+        </a>
+      </nav>
+    </section>
+
+    <!-- =================== TL;DR =================== -->
+    <section class="section section--tldr">
+      <div class="tldr-grid">
+        <div class="tldr-card">
+          <div class="tldr-num">01</div>
+          <h3>Reusable</h3>
+          <p>A single frozen diffusion model serves as the reward model across many tasks and styles, from locomotion and steering, to dodgeball and zombie-walk.</p>
+        </div>
+        <div class="tldr-card">
+          <div class="tldr-num">02</div>
+          <h3>Modular</h3>
+          <p>A motion prior is trained once, independently of any task or policy, and serves as a reward model without ever accessing the original motion data.</p>
+        </div>
+        <div class="tldr-card">
+          <div class="tldr-num">03</div>
+          <h3>Composable</h3>
+          <p>A general pretrained motion prior can be shaped or composed to synthesize new styles not present in the original dataset without further training.</p> 
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== ABSTRACT =================== -->
+    <section class="section section--prose" id="abstract">
+      <h2 class="section-title">Abstract</h2>
+      <p>
+        Data-driven motion priors that can guide agents toward producing naturalistic behaviors play a pivotal role in creating life-like virtual characters. Adversarial imitation learning has been a highly effective method for learning motion priors from reference motion data. However, adversarial priors, with few exceptions, need to be retrained for each new controller, thereby limiting their reusability and necessitating the retention of the reference motion data when applied to downstream tasks.
+      </p>
+      <p>
+        In this work, we present <strong>Score-Matching Motion Priors (SMP)</strong>, which leverages pre-trained motion diffusion models and <em>score distillation sampling</em> (SDS) to create reusable task-agnostic motion priors. SMPs can be pre-trained on a motion dataset, independent of any control policy or task. Once trained, they can be frozen and reused as general-purpose reward functions to train policies to produce naturalistic behaviors for downstream tasks.
+      </p>
+      <p>
+        We show that a general motion prior trained on large-scale datasets can be repurposed into a variety of style-specific priors. Furthermore, SMP can compose different styles to synthesize new styles not present in the original dataset. Our method creates reusable and modular motion priors that produce high-quality motions comparable to state-of-the-art adversarial imitation learning methods. We demonstrate the effectiveness of SMP across a diverse suite of control tasks with physically simulated humanoid characters.
+      </p>
+    </section>
+
+    <!-- =================== METHOD / PIPELINE =================== -->
+    <section class="section section--method" id="method">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-lede">
+        A motion diffusion model is trained on a reference motion dataset. During policy training, the pretrained diffusion model is repurposed as a reward model: it compares the noise added to the agent&rsquo;s motion against the noise it predicts, and the residual evaluates how far the behavior is from the reference data manifold.
+      </p>
+
+      <figure class="figure figure--wide">
+        <video class="video" controls autoplay muted loop playsinline preload="metadata" poster="">
+          <source src="./assets/videos/pipeline.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <strong>Schematic overview.</strong> A pretrained motion diffusion model serves as a reusable reward model for motion naturalness via score distillation sampling. The model can be style-conditioned, enabling the policy to learn specific skills or styles without retraining the original motion data.
+        </figcaption>
+      </figure>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-label">Ensemble Score-Matching</div>
+          <p>Instead of evaluating SDS at a single random diffusion timestep, SMP aggregates SDS losses over a fixed set of timesteps. This substantially reduces variance without introducing significant bias, therebystabilizing PPO training.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">Adaptive Normalization</div>
+          <p>SDS magnitudes differ sharply across noise levels and can vary across diffusion model checkpoints. We normalize each timestep&rsquo;s SDS error by its running mean, substantially reducing the burden of manual hyperparameter tuning.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">Generative State Initialization</div>
+          <p>The same diffusion model is sampled to generate initial states for training. This matches reference-state-initialization&rsquo;s exploration benefits without retaining the original motion dataset.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== SECTION: STYLE PRIOR =================== -->
+    <section class="section section--result section--band" id="styles">
+      <div class="result-head">
+        <span class="result-tag">§1 &middot; Modularity</span>
+        <h2 class="section-title">One prior, 100+N styles</h2>
+        <p class="section-lede">
+          We train a single style-conditioned diffusion model on the 20-hour 100STYLE dataset. Using classifier-free guidance, the <em>same</em> frozen model is reshaped into distinct style-specific priors &mdash; no style-specific datasets, no discriminator retraining. Diffusion model predictions conditioned on different styles can be <em>composed</em> to synthesize styles that don&rsquo;t exist in the original dataset, such as <em>Elated + FlickLegs</em> and <em>GracefulArms + Spin</em>.
+        </p>
+      </div>
+      <figure class="figure figure--wide">
+        <video class="video" controls autoplay muted loop playsinline preload="metadata">
+          <source src="./assets/videos/style_composition.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <strong>Style composition.</strong> A pretrained 100-style prior is adapted via classifier-free guidance and per-body-part mixing in the diffusion model&rsquo;s <strong>&epsilon;</strong>-space to produce new stylistic behaviors &mdash; all while the agent performs a downstream target-location task.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- =================== SECTION: MULTI-TASK =================== -->
+    <section class="section section--result" id="tasks">
+      <div class="result-head">
+        <span class="result-tag">§2 &middot; Reusability</span>
+        <h2 class="section-title">One prior, many tasks</h2>
+        <p class="section-lede">
+          A single motion prior trained on the LaFAN1 locomotion dataset is reused to train policies for different tasks. The character automatically <em>discovers</em> gait transitions &mdash; backward jogs, side-steps, slow walks near targets &mdash; and, for dodgeball, develops agile <em>jumping and dodging</em> skills that do not explicitly appear in the reference data.
+        </p>
+      </div>
+
+      <figure class="figure figure--wide">
+        <video class="video" controls autoplay muted loop playsinline preload="metadata">
+          <source src="./assets/videos/tasks_lafan_prior.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>LaFAN1 locomotion prior</strong> reused across multiple downstream tasks.</figcaption>
+      </figure>
+
+      <div class="grid grid--3">
+        <article class="card">
+          <video class="card-video" autoplay muted loop playsinline preload="metadata">
+            <source src="./assets/videos/steering.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h3>Steering</h3>
+            <p>Following a target heading and target velocity. Side-steps and cross-stepping gaits arise when the two directions disagree.</p>
+          </div>
+        </article>
+        <article class="card">
+          <video class="card-video" autoplay muted loop playsinline preload="metadata">
+            <source src="./assets/videos/locatoin.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h3>Target Location</h3>
+            <p>Reaching 2D target positions. The character speeds up when far from the target and transitions smoothly into walking as it approaches the target.</p>
+          </div>
+        </article>
+        <article class="card">
+          <video class="card-video" autoplay muted loop playsinline preload="metadata">
+            <source src="./assets/videos/dodgeball.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h3>Dodgeball</h3>
+            <p>Balls are launched at up to 25m/s from up to 10m away &mdash; less than 0.5s to react. Agile dodging skills resembling human-like strategies emerge purely from locomotion data.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================== SECTION: HOI =================== -->
+    <section class="section section--result section--band" id="interaction">
+      <div class="result-head">
+        <span class="result-tag">§3 &middot; Human&ndash;Object Interaction</span>
+        <h2 class="section-title">Beyond locomotion: object and scene interaction</h2>
+        <p class="section-lede">
+          SMP extends naturally to joint human&ndash;object priors by modelling character and object motions together. This enables complex tasks such as <em>picking up a box</em> and <em>climbing stairs</em>, with coordinated whole-body manipulation and stable foot contacts.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <video class="card-video" autoplay muted loop playsinline preload="metadata">
+            <source src="./assets/videos/box_carrying.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h3>Object Carry</h3>
+            <p>Walk to a box, pick it up, then carry it to an arbitrary target location. The prior jointly models character and object motions.</p>
+          </div>
+        </article>
+        <article class="card">
+          <video class="card-video" autoplay muted loop playsinline preload="metadata">
+            <source src="./assets/videos/stair_traversal.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h3>Stair Traversal</h3>
+            <p>Using a human&ndash;scene interaction prior, the character ascends and descends a staircase with natural foot placement.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================== SECTION: EMERGENCE =================== -->
+    <section class="section section--result" id="emergence">
+      <div class="result-head">
+        <span class="result-tag">§5 &middot; Data efficiency</span>
+        <h2 class="section-title">Skill emergence from 3 seconds of data</h2>
+        <p class="section-lede">
+          SMP works even when reference data is scarce. With only <strong>three seconds</strong> of walking, jogging, and running clips, the character learns to continuously modulate its gait across a wide speed range &mdash; <em>developing</em> transitions such as walk&rarr;jog&rarr;sprint that were never in the dataset.
+        </p>
+      </div>
+
+      <figure class="figure figure--wide">
+        <video class="video" controls autoplay muted loop playsinline preload="metadata">
+          <source src="./assets/videos/3s_prior.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <strong>Target speed</strong> trained from a 3-second motion prior.
+          The policy follows continuous target speeds sampled from <em>[1.2, 6.8]&nbsp;m/s</em>, automatically adjusting stride frequency and gait.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- =================== SECTION: REAL ROBOT =================== -->
+    <section class="section section--result section--robot" id="robot">
+      <div class="result-head">
+        <span class="result-tag">§6 &middot; Real World</span>
+        <h2 class="section-title">From simulation to a real humanoid</h2>
+        <p class="section-lede">
+          An SMP-trained policy is deployed directly on a Unitree G1 humanoid. With asymmetric actor-critic training, domain randomization, and proprioception-only observations, the robot exhibits natural locomotion, robust recovery from external perturbations, and agile motion skills.
+        </p>
+      </div>
+
+      <figure class="figure figure--wide">
+        <video class="video" controls autoplay muted loop playsinline preload="metadata">
+          <source src="./assets/videos/robot_spinkick.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <strong>Real-world Unitree G1.</strong> SMP transfers from simulation to hardware, showing agile motion skills without runtime motion planners or hand-crafted heuristics.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- =================== FULL VIDEO =================== -->
+    <section class="section section--prose" id="full-video">
+      <h2 class="section-title">Full video</h2>
+      <p class="section-lede">A complete walkthrough of the paper &mdash; background, motivation, method, and additional qualitative results across all task settings.</p>
+
+      <div class="video-paper-grid">
+        <div class="vp-frame vp-frame--video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/jBA2tWk6vzU?rel=0"
+            title="SMP full introduction video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <a class="vp-frame vp-frame--paper" href="./assets/paper/SMP_arxiv_0421.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full SMP paper (PDF)">
+          <img src="./assets/paper/SMP_arxiv_0421.pdf.png" alt="Cover of the SMP paper" loading="lazy">
+        </a>
+        <p class="vp-caption">Watch the video walkthrough</p>
+        <p class="vp-caption">
+          <a href="./assets/paper/SMP_arxiv_0421.pdf" target="_blank" rel="noopener noreferrer">Read the paper (PDF)&nbsp;&rarr;</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- =================== BIBTEX =================== -->
+    <section class="section section--prose" id="bibtex">
+      <h2 class="section-title">Citation</h2>
+      <pre class="bibtex"><code>@article{mu2026smp,
+  title   = {SMP: Reusable Score-Matching Motion Priors for Physics-Based Character Control},
+  author  = {Mu, Yuxuan and Zhang, Ziyu and Shi, Yi and Yang, Dun and
+             Matsumoto, Minami and Imamura, Kotaro and Tevet, Guy and
+             Guo, Chuan and Taylor, Michael and Shu, Chang and
+             Xi, Pengcheng and Peng, Xue Bin},
+  journal = {ACM Transactions on Graphics (Proceedings of SIGGRAPH 2026)},
+  year    = {2026},
+}</code></pre>
+    </section>
+
+  </main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-credit">Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>, <a href="https://php-parkour.github.io/">Perceptive Humanoid Parkour</a>, <a href="https://omniretarget.github.io/">OmniRetarget</a>, and <a href="https://beyondmimic.github.io/">BeyondMimic</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
